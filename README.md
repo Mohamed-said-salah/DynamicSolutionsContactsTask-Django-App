@@ -30,6 +30,6 @@ Distributed Lock was required in the task in the form of preventing multi-contac
 
 ## Exaple 🖼️
 <div align='center'>
-<img height="460px" src="https://github.com/Mohamed-said-salah/DynamicSolutionsContactTask/blob/main/screen_shots/Screenshot%202024-01-12%20112856.png?raw=true">
+<img  src="https://github.com/Mohamed-said-salah/DynamicSolutionsContactTask/blob/main/screen_shots/Screenshot%202024-01-12%20112856.png?raw=true">
 <hr/>
 </div>
