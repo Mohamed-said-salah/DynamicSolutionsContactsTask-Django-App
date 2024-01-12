@@ -29,3 +29,8 @@ Distributed Lock was required in the task in the form of preventing multi-contac
  - 
 
 ## Exaple 🖼️
+<div align='center'>
+<img height="460px" src="https://github.com/Mohamed-said-salah/QR-PRO-APP/blob/main/screen_shots/Screenshot_2022-05-21-14-20-50-80_1d10d8d9cd67b75ae7db9e9f00dd6d83-portrait.png?raw=true">
+<img height="460px" src="https://github.com/Mohamed-said-salah/QR-PRO-APP/blob/main/screen_shots/Screenshot_2022-05-21-16-47-21-81_1d10d8d9cd67b75ae7db9e9f00dd6d83-portrait.png?raw=true">
+<hr/>
+</div>
