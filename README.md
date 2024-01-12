@@ -1,6 +1,6 @@
 # Dynamic Bussiness Solutions Contact Task
 
-## Frameworks & Tools
+## Languages, frameworks and Tools 📑
  - Django
  - DjangoRestFramework
  - PostgreSQL
