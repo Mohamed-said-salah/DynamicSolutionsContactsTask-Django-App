@@ -10,6 +10,7 @@ from .serializers import UserSerializer, ContactSerializer
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from drf_spectacular.utils import extend_schema, OpenApiParameter
+
 # Create your views here.
 
 # Create User
@@ -17,6 +18,7 @@ class UserRegistrationView(generics.CreateAPIView):
     serializer_class = UserSerializer 
 
     # this endpoint will only accept POST method and will handle the process of registering new user
+    @extend_schema(summary="Create new user, with username, password, email")
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data, context={'registration': True}) # gets string json data coming on request body as a python object
         # this will confirm unique username, and confirm password with confirmation password + extra model validation
@@ -38,6 +40,7 @@ class ContactCreateView(generics.CreateAPIView):
     authentication_classes = [JWTTokenUserAuthentication] # will forbidden users with no access-token with 401 response
 
     # will handle the process of saving new contact with only POST method
+    @extend_schema(summary="Create new contact by filling the basic fields ex. phone contact_name, email")
     def post(self, request, *arg, **kwargs):
         serializer = self.get_serializer(data=request.data) # converting string json data coming on request body to python object
 
@@ -59,6 +62,7 @@ class ContactDetailView(generics.RetrieveAPIView):
     authentication_classes = [JWTTokenUserAuthentication] # will forbidden users with no access-token with 401 response
 
     # get contact by id 
+    @extend_schema(summary="Get contact by id")
     def get(self, request, *args, **kwargs):
         contact_id = kwargs.get('pk') # parse contact id from the coming request URL
         
@@ -78,7 +82,7 @@ class ContactSearchView(generics.RetrieveAPIView):
     authentication_classes = [JWTTokenUserAuthentication] # will forbidden users with no access-token with 401 response
     
     # search for contact related to search data
-    @extend_schema(parameters=[OpenApiParameter(name='q', type=str)]) # adding the q (query field) to the swagger docs
+    @extend_schema(parameters=[OpenApiParameter(name='q', type=str)], summary="Search contacts with name phone or email") # adding the q (query field) to the swagger docs
     def get(self, request, *args, **kwargs):
         query = request.GET.get('q') # getting the query [searched details] from path
         search_result = Contact.objects.filter(Q(contact_name__icontains=query) | Q(email=query) | Q(phone=query)).values() # searches db with the query
@@ -99,6 +103,7 @@ class ContactLockEditView(generics.RetrieveAPIView):
     
     # will prevent one contact to be edited from more than one place
     # only one session for editing the contact
+    @extend_schema(summary="Reserve editing contact with given id to user for one update process or until lock-session expires")
     def get(self, request, *args, **kwargs) -> Response:
         contact_id = kwargs.get('pk') # parse the id for the contact will be locked
 
@@ -129,6 +134,7 @@ class ContactEditView(generics.UpdateAPIView):
     allowed_methods = ['PUT']
 
     # adding new contact info for users whom carrying lock_token
+    @extend_schema(summary="Alters contact data with the given ones, but only for user who is locking the contact (** user who has lock_token)")
     def put(self, req, *args, **kwargs) -> Response:
         contact_id = kwargs.get('pk') # parsing the contact id from path url
         lock_key = f"contact_lock_{contact_id}" # this results with the key of the lock_token on redis caching db

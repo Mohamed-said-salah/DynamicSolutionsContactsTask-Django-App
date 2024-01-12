@@ -18,7 +18,7 @@ contact_urls = [
     path("create/", views.ContactCreateView.as_view(), name='contact-create'),
     path("search/", views.ContactSearchView.as_view(), name='contact-details'),
     path("detail/<int:pk>/", views.ContactDetailView.as_view(), name='contact-details'),
-    path("lock/<int:pk>/", views.ContactLockEditView.as_view(), name='contact-lock-edit'),
+    path("lock-edit/<int:pk>/", views.ContactLockEditView.as_view(), name='contact-lock-edit'),
     path("edit/<int:pk>/<str:lock_token>/", views.ContactEditView.as_view(), name='contact-edit'),
     # Add other contact-related URL patterns as needed
 ]
