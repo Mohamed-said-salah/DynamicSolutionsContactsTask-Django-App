@@ -18,6 +18,8 @@ Distributed Lock was required in the task in the form of preventing multi-contac
  - Search 🔍
 
 ## Models in The App 📋
+ - User (id, username, email, password, is_admin)
+ - Contact (id, contact_name, phone, email, created_by, updated_by)
 
 ## IDEs 💻
  - VS code
