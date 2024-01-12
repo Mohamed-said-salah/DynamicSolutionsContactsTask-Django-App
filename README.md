@@ -17,6 +17,8 @@ Distributed Lock was required in the task in the form of preventing multi-contac
  - Distributed Lock 🔐
  - Search 🔍
 
+## Models in The App 📋
+
 ## IDEs 💻
  - VS code
  - PyCharm
