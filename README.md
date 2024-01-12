@@ -1,18 +1,19 @@
 # Dynamic Bussiness Solutions Contact Task
 
 ## Languages, frameworks and Tools 📑
- - Python
+ - Python 🐍
  - Django
- - DjangoRestFramework
- - drf-spectacular (API Documentation)
+ - DjangoRestFramework 
+ - drf-spectacular (API Documentation) 📃
 
 ## Tools 🔎
- - PostgreSQL
- - Redis Caching
- - Docker & Docker-Compose
+ - PostgreSQL 🐘
+ - Redis Caching 🫙
+ - Docker & Docker-Compose 🐳
 
 ## Features 🥇
- - Distributed Lock
+ - Distributed Lock 🔐
+ - Search 🔍
 
 ## IDEs 💻
  - VS code
@@ -21,4 +22,4 @@
 ## Setup 💽
  - 
 
-## Exaple 
+## Exaple 🖼️
