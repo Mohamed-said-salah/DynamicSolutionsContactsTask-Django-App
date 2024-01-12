@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
-
+from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +29,19 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+## **self added settings to extensions**
+SIMPLE_JWT = {
+    # ! don't forget to edit back after debugging
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30), ## now test easily 😅 - Mohamed
+}
+SPECTACULAR_SETTINGS = { # META data for the openapi docs
+    'TITLE': 'Dynamic Business Solutions Task 🧑‍💻',
+    'DESCRIPTION': 'Mohamed Saied Salah Ameen',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,26 +50,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'contact', #
-    'rest_framework', #
+    'contact', # including our app in the project
+    'rest_framework', # serializing for api JSON
+    'rest_framework.authtoken', # for JWT AUTHENTICATION 
+    'drf_spectacular', # for the openapi 3 docs
     'corsheaders', #
-    'rest_framework.authtoken', #
-    'drf_yasg', #
 ]
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema', # parsing api and generating openapi schema automatically
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        # Add other authentication classes as needed
+        'rest_framework_simplejwt.authentication.JWTAuthentication', # injecting dependency for authenticating requests with access-token
     ),
 }
 
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",  # Use your Redis server information
+        # "LOCATION": "redis://127.0.0.1:6379/1",  # While using local environments
+        "LOCATION": "redis://redis:6379/1",  # while on docker
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -102,10 +114,16 @@ WSGI_APPLICATION = 'contact_service.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES = { # linking Postgresql as our essential DB for the project
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_DB', 'dynamicsolutiontask'),
+        'USER': os.environ.get('POSTGRES_USER', 'django'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'django'),
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 

@@ -5,3 +5,23 @@ services:
     build: .
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: "postgres:latest"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: dynamicsolutiontask
+      POSTGRES_USER: django
+      POSTGRES_PASSWORD: django
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:

@@ -104,8 +104,6 @@ python-json-logger==2.0.7
 pytweening==1.0.4
 pytz==2023.3.post1
 pywhatkit==5.4
-pywin32==306
-pywinpty==2.0.10
 PyYAML==6.0.1
 pyzmq==25.1.0
 qtconsole==5.4.3
@@ -137,3 +135,13 @@ websocket-client==1.5.2
 Werkzeug==3.0.1
 widgetsnbextension==4.0.7
 wikipedia==1.4.0
+psycopg2_binary==2.9.9
+drf-spectacular==0.27.0
+drf-spectacular-sidecar==2024.1.1
+# # Install pywin32 only if not on Linux
+# --platform != 'linux' and --platform != 'linux2'
+# pywin32==306
+
+# # Install pywinpty only if not on Linux
+# --platform != 'linux' and --platform != 'linux2'
+# pywinpty==2.0.10

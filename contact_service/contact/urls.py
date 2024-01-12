@@ -1,27 +1,31 @@
-from django.urls import path, include
-from .views import *
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from django.urls import path, include # to include our views on the api
+from . import views # had all of our endpoints views
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView # Login, RefreshToken endpoints
 
+# User creation and Auth(Login)
 user_urls = [
-    path('register/', UserRegistrationView.as_view(), name='user-register'),
-    path('login/', UserLoginView.as_view(), name='user-login'),
-    # Add other user-related URL patterns as needed
+    path('register/', views.UserRegistrationView.as_view(), name='user_register'),
+    path('login/', TokenObtainPairView.as_view(), name='user_login'),
 ]
 
+# Manage Tokens
 token_urls = [
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
+# Contacts 
 contact_urls = [
-    path('create/', ContactCreateView.as_view(), name='contact-create'),
-    path('<int:pk>/', ContactDetailView.as_view(), name='contact-detail'),
-    path('update/<int:pk>/', ContactUpdateView.as_view(), name='contact-update'),
+    path("create/", views.ContactCreateView.as_view(), name='contact-create'),
+    path("search/", views.ContactSearchView.as_view(), name='contact-details'),
+    path("detail/<int:pk>/", views.ContactDetailView.as_view(), name='contact-details'),
+    path("lock/<int:pk>/", views.ContactLockEditView.as_view(), name='contact-lock-edit'),
+    path("edit/<int:pk>/<str:lock_token>/", views.ContactEditView.as_view(), name='contact-edit'),
     # Add other contact-related URL patterns as needed
 ]
 
 urlpatterns = [
-    path('users/', include(user_urls)),
-    path('contacts/', include(contact_urls)),
+    path('users/', include(user_urls), name='users'), # links user views to the api
+    path('contacts/', include(contact_urls), name='contacts'), # links contacts views to the api
+    path('token/', include(token_urls), name='tokens'), # links token refreshing to the api
 ]
 
