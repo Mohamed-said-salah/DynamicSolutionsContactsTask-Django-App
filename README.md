@@ -26,7 +26,8 @@ Distributed Lock was required in the task in the form of preventing multi-contac
  - PyCharm
 
 ## Setup 💽
- - 
+ 1. a
+ 2. 
 
 ## Exaple 🖼️
 <div align='center'>
