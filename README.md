@@ -10,3 +10,15 @@
  - PostgreSQL
  - Redis Caching
  - Docker & Docker-Compose
+
+## Features 🥇
+ - 
+
+## IDEs 💻
+ - VS code
+ - PyCharm
+
+## Setup 💽
+ - 
+
+## ScreenShot 🖼️
