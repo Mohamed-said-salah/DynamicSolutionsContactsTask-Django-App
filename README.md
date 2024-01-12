@@ -31,7 +31,9 @@ Distributed Lock was required in the task in the form of preventing multi-contac
  3. Verify the successful setup by navigating to http://localhost:8000/api/swagger/ in your browser.
 <br>
 <br>
+
 ## Projoect Exaple 🖼️
+
 <div align='center'>
 <img src="https://github.com/Mohamed-said-salah/DynamicSolutionsContactTask/blob/main/screen_shots/Screenshot%202024-01-12%20113838.png?raw=true">
 <hr/>
