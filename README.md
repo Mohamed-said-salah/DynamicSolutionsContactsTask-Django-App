@@ -25,9 +25,10 @@ Distributed Lock was required in the task in the form of preventing multi-contac
  - VS code
  - PyCharm
 
-## Setup 💽
- 1. a
- 2. 
+## Project Setup 💽
+ 1. Clone this repository to your local machine.
+ 2. Use the pre-configured Docker setup to seamlessly launch the project.
+ 3. Verify the successful setup by navigating to http://localhost:8000/api/swagger/ in your browser.
 
 
 
