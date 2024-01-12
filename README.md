@@ -4,7 +4,7 @@
  - Python
  - Django
  - DjangoRestFramework
- - drf-spectacular
+ - drf-spectacular (API Documentation)
 
 ## Tools 🔎
  - PostgreSQL
