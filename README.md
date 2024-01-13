@@ -30,7 +30,7 @@
  - Clone this repository to your local machine and open the project by any IDE.
 
    ``` bash
-   git https://github.com/Mohamed-said-salah/DynamicSolutionsContactTask.git
+   git clone https://github.com/Mohamed-said-salah/DynamicSolutionsContactTask.git
    cd contact_service
    ```
  - Run the following command to start the app.
