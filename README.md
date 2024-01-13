@@ -1,21 +1,20 @@
-# Dynamic Bussiness Solutions Contact Task 📀
-a task that requires creating a Django app that authenticates users with JWT. And allow them to save contacts, search and edit them.
-Distributed Lock was required in the task in the form of preventing multi-contact updates at the same time.
+# Contact Manager
+ - Building a Django app that authenticates users with JWT. And allow them to save contacts, search and edit them.
+   Multi Contact update in the same time prevented by using Distributed Lock technique. 
 
-## Languages, frameworks and Tools 📑
- - Python 🐍
+## Languages and frameworks 📑
+ - Python 
  - Django
- - DjangoRestFramework 
+ - DjangoRestFramework
+ - PostgreSQL 
+ - Redis 
+ - Docker
  - drf-spectacular (API Documentation) 📃
 
-## Tools 🔎
- - PostgreSQL 🐘
- - Redis Caching 🫙
- - Docker & Docker-Compose 🐳
-
+ 
 ## Features 🥇
  - Distributed Lock 🔐
- - Search 🔍
+ - Search 
 
 ## Models in The App 📋
  - User (id, username, email, password, is_admin)
