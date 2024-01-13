@@ -34,10 +34,7 @@
    cd contact_service
    ```
  - Run the following command to start the app.
-   ``` bash
-   docker compose up
-   ```
-   or 
+
    ``` bash
    docker-compose up
    ```
