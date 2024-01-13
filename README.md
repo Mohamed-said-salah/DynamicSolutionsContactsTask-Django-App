@@ -43,9 +43,13 @@
    ```
 
 ## Usage 🚀
+
  - Directly try it by nevigating to http://localhost:8000/api/swagger/ in your browser.
+
  - Here is the list of the API Endpoints
+
    * Users
+   
      - Register new user
        ``` bash
        POST /api/users/register/
@@ -54,32 +58,41 @@
        ``` bash
        POST /api/users/login/
        ```
+
    * Token
+   
      - Refresh access token
        ``` bash
        POST /api/token/refresh/
        ```
+   
    * Contacs
+     
      - Create new Contact
        ``` bash
        POST /api/contacts/create/
        ```
-     - Reserve contact editing session
-       ``` bash
-       GET /api/contacts/lock-edit/{id}/
-       ```
-     - Edit Contact
-       ``` bash
-       PUT /api/contacts/edit/{id}/{edit-session-token}/
-       ```
+          
      - Find contact by id
        ``` bash
        GET /api/contacts/detail/{id}/
        ```
+  
      - Search contacts
        ``` bash
        GET /api/contacts/search/q?={search_keywords}
        ```  
+ 
+     - Reserve contact editing session
+       ``` bash
+       GET /api/contacts/lock-edit/{id}/
+       ```
+     
+     - Edit Contact
+       ``` bash
+       PUT /api/contacts/edit/{id}/{edit-session-token}/
+       ```
+
 
 <br>
 <br>
