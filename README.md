@@ -1,4 +1,4 @@
-# Dynamic Solutions Contact Manager
+# Dynamic Solutions-Contact Manager
  - Building a Django app that authenticates users with JWT. And allow them to save contacts, search and edit them.
    Multi Contact update in the same time prevented by using Distributed Lock technique. And the app is containerized.
 
