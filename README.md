@@ -9,9 +9,7 @@
  - PostgreSQL 
  - Redis 
  - Docker
- - drf-spectacular (API Documentation) 📃
 
- 
 ## Features 🥇
  - Distributed Lock 🔐
  - Search 
