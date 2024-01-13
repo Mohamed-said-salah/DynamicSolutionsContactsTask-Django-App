@@ -44,7 +44,7 @@
 
 ## Usage 🚀
 
- - Directly try it using Swagger by nevigating to http://localhost:8000/api/swagger/ in your browser.
+ - Directly try it using Swagger by navigating to http://localhost:8000/api/swagger/ in your browser.
 
  - OR Here is the list of the API Endpoints
 
