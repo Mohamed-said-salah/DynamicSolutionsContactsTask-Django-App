@@ -44,9 +44,9 @@
 
 ## Usage 🚀
 
- - Directly try it by nevigating to http://localhost:8000/api/swagger/ in your browser.
+ - Directly try it using Swagger by nevigating to http://localhost:8000/api/swagger/ in your browser.
 
- - Here is the list of the API Endpoints
+ - OR Here is the list of the API Endpoints
 
    * Users
    
@@ -92,9 +92,7 @@
        ``` bash
        PUT /api/contacts/edit/{id}/{edit-session-token}/
        ```
-
-
-<br>
+       
 <br>
 
 ## Projoect Exaple 🖼️
