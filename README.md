@@ -19,7 +19,7 @@
  - Search Contacts
 
 ## Models in The App 📋
- - User (id, username, email, password, is_admin)
+ - User (id, username, email, password)
  - Contact (id, contact_name, phone, email, created_by, updated_by)
 
 ## IDEs 💻
