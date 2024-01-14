@@ -93,7 +93,7 @@
        
 <br>
 
-## Projoect Exaple 🖼️
+## Projoect Example 🖼️
 
 <div align='center'>
 <img src="https://github.com/Mohamed-said-salah/DynamicSolutionsContactTask/blob/main/screen_shots/Screenshot%202024-01-12%20113838.png?raw=true">
